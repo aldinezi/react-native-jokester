@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Platform, ScrollView, StyleSheet, View, Text, TouchableOpacity, ActivityIndicator, Keyboard, Picker } from 'react-native';
+import { Platform, ScrollView, StyleSheet, View, Text, TouchableOpacity, ActivityIndicator, Keyboard, Picker, Clipboard } from 'react-native';
 import { SearchBar, Icon, Card } from 'react-native-elements';
 import { debounce } from 'lodash';
 
@@ -19,6 +19,7 @@ class JokesScreen extends Component {
     this.searchQuery = this.searchQuery.bind(this);
     this.getCategories = this.getCategories.bind(this);
     this.clearResults = this.clearResults.bind(this);
+    this.writeToClipboard = this.writeToClipboard.bind(this);
 
     this.debouncedSearch = debounce(this.searchQuery, 900).bind(this);
   }
@@ -86,9 +87,17 @@ class JokesScreen extends Component {
                   key={index}
                   containerStyle={styles.cardContainer}
                 >
-                  <View >
+                  <View>
                     <Text>{joke.value}</Text>
                   </View>
+                  <Icon
+                    onPress={() => this.writeToClipboard(joke.value)}
+                    raised
+                    name='copy'
+                    type='font-awesome'
+                    color='#2f95dc'
+                    size={12}
+                    underlayColor='#fefefe'/>
                 </Card>
             ))
           }
@@ -114,6 +123,11 @@ class JokesScreen extends Component {
 
     );
   }
+  writeToClipboard(joke) {
+    Clipboard.setString(joke);
+    alert('Copied to Clipboard!');
+  }
+
   getRandomJoke() {
     // https://api.chucknorris.io/jokes/random?category={category}
     const url = `${this.baseUrl}random${this.state.category ? '?category='+this.state.category : ''}`;
