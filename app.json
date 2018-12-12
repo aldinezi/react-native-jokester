@@ -1,11 +1,14 @@
 {
   "expo": {
     "name": "jokester",
-    "description": "A very interesting project.",
+    "description": "Jokester app using Chuck Norris free API.",
     "slug": "jokester-aldinezi",
     "privacy": "public",
     "sdkVersion": "31.0.0",
-    "platforms": ["ios", "android"],
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -29,6 +32,7 @@
     },
     "android": {
       "package": "com.aldinezi.jokester"
-    }
+    },
+    "githubUrl": "https://github.com/aldinezi/react-native-jokester"
   }
 }

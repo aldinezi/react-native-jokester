@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Platform, ScrollView, StyleSheet, View, Text, TouchableOpacity, ActivityIndicator, Keyboard, Picker, Clipboard } from 'react-native';
 import { SearchBar, Icon, Card } from 'react-native-elements';
+import Toast from 'react-native-simple-toast';
 import { debounce } from 'lodash';
 
 class JokesScreen extends Component {
@@ -120,12 +121,11 @@ class JokesScreen extends Component {
           underlayColor='#fefefe'/>
         </TouchableOpacity>
       </View>
-
     );
   }
   writeToClipboard(joke) {
     Clipboard.setString(joke);
-    alert('Copied to Clipboard!');
+    Toast.show('Joke copied in clipboard.');
   }
 
   getRandomJoke() {
