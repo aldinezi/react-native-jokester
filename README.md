@@ -1,6 +1,16 @@
 # react-native-jokester
 Jokester Android app
 
+## Changelog
+
+22. September 2018.
+- inital release
+
+12. December 2018.
+- add option to copy joke in clipboard
+- display toast notification on copied joke
+
+
 App built using Expo - React Native framework, published on Expo.
 
 https://expo.io/@aldinezi/jokester-aldinezi
