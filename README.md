@@ -9,8 +9,7 @@ Jokester Android app
 
 
 ## App screenshot:
-
-![App screenshot](https://raw.githubusercontent.com/aldinezi/react-native-jokester/master/Screenshot_2018-09-22-11-25-58-211_com.aldinezi.jokester.png)
+<img src="https://raw.githubusercontent.com/aldinezi/react-native-jokester/master/Screenshot_2018-09-22-11-25-58-211_com.aldinezi.jokester.png" height="600" />
 
 
 ## Changelog
